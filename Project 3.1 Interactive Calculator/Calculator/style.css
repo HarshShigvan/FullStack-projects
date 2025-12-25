@@ -1,0 +1,193 @@
+/* Base styling for the entire page */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s;
+    /* Default theme: Dark Mode */
+    background-color: #1a1a1a; 
+    color: white;
+}
+
+/* Calculator container (the main body) */
+.calculator {
+    background-color: #000000; /* Darker background for calculator body */
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    width: 340px; 
+}
+
+/* New: Theme Toggle Button Style (Placed relative to the body) */
+.theme-toggle-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.8em;
+    padding: 10px;
+    color: #ffd700; /* Default icon color (Moon/Star) */
+    transition: color 0.3s;
+}
+
+/* Media query for better mobile responsiveness */
+@media (max-width: 400px) {
+    .calculator {
+        width: 90vw; 
+        padding: 10px;
+    }
+    /* Tweak: Ensure history font scales down well for long expressions */
+    #history-operand-display {
+        font-size: 0.9em !important; 
+    }
+    #current-operand-display {
+        font-size: 2.5em !important;
+        padding: 15px 10px !important;
+    }
+    button {
+        font-size: 1.1em !important; 
+        height: 55px !important;
+    }
+    .theme-toggle-button {
+        top: 10px;
+        right: 10px;
+        font-size: 1.5em;
+    }
+}
+
+/* Display container wrapper */
+.display-container {
+    background-color: #1c1c1c; /* Dark display background */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    text-align: right;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* The upper display for history (full expression) */
+#history-operand-display {
+    font-size: 1.1em;
+    color: #a0a0a0; 
+    min-height: 20px;
+    padding-top: 5px;
+    word-wrap: break-word;
+}
+
+/* The main display for the current number/result */
+#current-operand-display {
+    font-size: 3em;
+    line-height: 1.2;
+    word-wrap: break-word; 
+    padding-bottom: 5px;
+}
+
+/* Buttons grid layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Base button style */
+button {
+    background-color: #505050; /* Number button color */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 1.4em;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background-color 0.1s, transform 0.05s, color 0.3s;
+    height: 65px; 
+    width: 100%; 
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+button:active {
+    transform: scale(0.95);
+    filter: brightness(120%);
+}
+
+/* Function/Scientific buttons */
+.function {
+    background-color: #3b3b3b; 
+    color: #d4d4d2; 
+}
+
+/* Operator buttons (+, -, ×, ÷, =) */
+.operator {
+    background-color: #ff9500; 
+    color: white;
+    font-weight: bold;
+}
+
+.equals {
+    background-color: #007aff; 
+    color: white;
+}
+
+/* Special style for the '0' button (spans two columns) */
+.zero {
+    grid-column: span 2;
+    border-radius: 30px; 
+    text-align: left;
+    padding-left: 20px;
+    width: auto; 
+}
+
+
+/* --- LIGHT MODE OVERRIDES (The new theme) --- */
+
+body.light-mode {
+    background-color: #e0e0e0; /* Light body background */
+    color: #1c1c1c;
+}
+
+body.light-mode .theme-toggle-button {
+    color: #4b4b4b; /* Dark icon color (Sun icon) */
+}
+
+body.light-mode .calculator {
+    background-color: #ffffff; /* White calculator body */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .display-container {
+    background-color: #f0f0f0; 
+}
+
+body.light-mode #history-operand-display {
+    color: #555555; 
+}
+
+body.light-mode #current-operand-display {
+    color: #1c1c1c; 
+}
+
+/* Number buttons */
+body.light-mode .buttons button:not(.function):not(.operator):not(.equals) {
+    background-color: #f0f0f0; 
+    color: #1c1c1c;
+}
+/* Function/Scientific buttons */
+body.light-mode .function {
+    background-color: #c0c0c0; 
+    color: #1c1c1c; 
+}
+/* Operator buttons */
+body.light-mode .operator {
+    background-color: #ffb74d; 
+    color: #1c1c1c; /* Changed operator text color to dark for light mode */
+}
+body.light-mode .equals {
+    background-color: #4da6ff; 
+    color: white;
+}

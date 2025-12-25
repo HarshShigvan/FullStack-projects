@@ -1,0 +1,139 @@
+/* style.css content */
+
+/* Custom CSS for transitions and specific UI elements */
+
+/* Font and Body Styling */
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: #f3f4f6; 
+    transition: background-color 0.3s; 
+    /* Ensure full viewport height for mobile responsiveness */
+    min-height: 100vh;
+}
+.dark-mode {
+    background: #1f2937;
+}
+
+/* Main App Container */
+.app-container {
+    min-height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+.dark-mode .app-container { 
+    background-color: #374151; 
+    box-shadow: none; /* Less harsh shadow in dark mode */
+}
+.dark-mode h1, .dark-mode .task-text, .dark-mode .filter-btn {
+    color: #f3f4f6;
+}
+.dark-mode input, .dark-mode select {
+    background-color: #4b5563;
+    color: #f3f4f6;
+    border-color: #374151;
+}
+
+/* Task Item Animations */
+.task-item {
+    /* Initial state for fade-in */
+    opacity: 0;
+    max-height: 150px; 
+    overflow: hidden;
+    transition: 
+        opacity 0.4s ease-in, 
+        max-height 0.4s ease-in, 
+        margin 0.4s ease-in,
+        background-color 0.2s;
+}
+
+/* State after creation (triggers fade-in) */
+.task-item.visible {
+    opacity: 1;
+}
+
+/* Slide-out/Fade-out for deleting */
+.task-item.deleting {
+    opacity: 0;
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Notification Popup */
+#notification-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#notification-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Overdue & Completed Styles */
+.deadline-info.overdue {
+    color: #ef4444; /* Tailwind red-500 */
+    font-weight: 600;
+}
+.completed .task-text {
+    text-decoration: line-through;
+    color: #9ca3af; /* Tailwind gray-400 */
+}
+.dark-mode .completed .task-text {
+    color: #6b7280; /* Tailwind gray-500 */
+}
+
+/* Filter Button Styling */
+.filter-btn {
+    border: 1px solid #4f46e5;
+    background-color: transparent;
+    color: #4f46e5;
+}
+.filter-btn.active {
+    background-color: #4f46e5;
+    color: white;
+    font-weight: 600;
+}
+.dark-mode .filter-btn {
+    border: 1px solid #818cf8;
+    color: #818cf8;
+}
+.dark-mode .filter-btn.active {
+    background-color: #818cf8;
+    color: #1f2937;
+}
+
+/* Microphone button styles when active */
+#mic-button.listening {
+    background-color: #3b82f6; /* Blue ring effect */
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+}
+
+/* Confirmation Modal Styles */
+#confirmation-modal {
+    display: flex; /* Use flexbox for centering */
+    transition: opacity 0.3s ease;
+}
+
+#confirmation-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+#confirmation-modal:not(.hidden) .modal-content {
+    transform: scale(1);
+}

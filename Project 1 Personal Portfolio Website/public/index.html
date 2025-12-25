@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Shigvan - Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-brand">Harsh Shigvan</div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm a <span id="typing-text"></span></p>
+        <a href="#projects" class="btn-primary">View My Work</a>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="WhatsApp Image 2025-07-24 at 20.42.16_97888a20.jpg" alt="Harsh Shigvan" class="profile-img">
+                <div>
+                    <p>Hello! My name is Harsh Shigvan. I am a web developer and designer passionate about learning new technologies and building creative, attractive websites. I am always searching for new ideas and love implementing them in my projects.</p>
+                    <div class="more-info">
+                        <p>Here is some more information about me that is initially hidden.</p>
+                    </div>
+                    <button class="btn-secondary">Read More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-bar">
+                    <div class="skill-name">HTML</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-level" data-level="90"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">CSS</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-level" data-level="80"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-level" data-level="75"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">Responsive Design</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-level" data-level="85"></div>
+                    </div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-name">Git & GitHub</div>
+                    <div class="skill-bar-bg">
+                        <div class="skill-level" data-level="70"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My Projects</h2>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="frontend">Frontend</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+            </div>
+            <div class="project-grid">
+                <div class="project-item" data-category="frontend">
+                    <h3>Project 1: My Portfolio Website</h3>
+                    <p>A personal site to showcase my profile, projects, and skills.</p>
+                    <a href="https://pratik-portfolio.example.com" target="_blank">View Project</a>
+                </div>
+                <div class="project-item" data-category="frontend">
+                    <h3>Project 2: To-Do List Web App</h3>
+                    <p>A simple to-do and reminder app, designed for easy use.</p>
+                    <a href="https://github.com/pratikjoshi/todoapp" target="_blank">View Project</a>
+                </div>
+                <div class="project-item" data-category="backend">
+                    <h3>Project 3: Responsive Blog Template</h3>
+                    <p>A responsive blog template suitable for mobile and desktop devices.</p>
+                    <a href="https://codepen.io/pratikjoshi/blog-template" target="_blank">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p style="text-align: center;">Feel free to reach out via email or connect with me on social media.</p>
+            <form id="contact-form" class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="mailto:harsh.shigvan.cse@email.com" aria-label="Email Harsh Shigvan">Email</a>
+            <a href="https://linkedin.com/in/HarshShigvan" target="_blank" aria-label="Connect with Harsh Shigvan on LinkedIn">LinkedIn</a>
+            <a href="https://github.com/HarshShigvan" target="_blank" aria-label="View Harsh Shigvan's GitHub profile">GitHub</a>
+        </div>
+        <p>&copy; 2025 Harsh Shigvan</p>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <a id="modal-link" href="#" target="_blank">View Project</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

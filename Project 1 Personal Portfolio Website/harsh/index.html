@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harsh Shigvan | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Harsh Shigvan</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button class="mode-toggle" id="modeToggle" aria-label="Toggle light/dark mode">🌙</button>
+        </li>
+      </ul>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">&#9776;</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Harsh Shigvan</h1>
+      <p class="tagline">Aspiring Web Developer &amp; Creative Thinker</p>
+      <a href="#projects" class="btn primary-btn scroll-link">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="about section">
+    <div class="about-container">
+      <img src="WhatsApp Image 2025-07-24 at 20.42.16_97888a20.jpg" alt="Harsh Shigvan" class="about-img">
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>Hello! I'm Harsh Shigvan, a passionate web developer excited to build beautiful, responsive, and user-friendly websites. I enjoy learning new technologies and turning ideas into reality with code. When I'm not coding, you can find me exploring tech trends or designing creative graphics!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="project1.jpg" alt="Weather App screenshot">
+        <div class="project-info">
+          <h3>Weather App</h3>
+          <p>A simple app fetching real-time weather data for any city using a public API. Built with HTML, CSS, and JS.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="project2.jpg" alt="To-Do List screenshot">
+        <div class="project-info">
+          <h3>To-Do List</h3>
+          <p>A minimal, interactive to-do list with add, delete, and mark-as-done features. All in vanilla JavaScript!</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="project3.jpg" alt="Portfolio Website screenshot">
+        <div class="project-info">
+          <h3>Portfolio Website</h3>
+          <p>My own responsive portfolio site (you're viewing it now!). Focused on design, clarity, and accessibility.</p>
+        </div>
+      </div>
+      <!-- Add up to 3 more projects as needed -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+    <h2>Contact Me</h2>
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required aria-required="true"/>
+        <span class="error" id="nameError"></span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required aria-required="true"/>
+        <span class="error" id="emailError"></span>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+        <span class="error" id="messageError"></span>
+      </div>
+      <button type="submit" class="btn primary-btn">Send Message</button>
+      <span class="form-success" id="formSuccess"></span>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Harsh Shigvan. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Use Inter font (Tailwind default) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Theme Toggle Button - positioned absolutely via CSS -->
+    <button id="theme-toggle" class="theme-toggle-button">🌙</button> 
+    
+    <div class="calculator">
+        <div class="display-container">
+            <!-- Display for the calculation history (full expression) -->
+            <div id="history-operand-display"></div>
+            <!-- Main display for the current number/result -->
+            <div id="current-operand-display">0</div>
+        </div>
+        
+        <div class="buttons">
+            <!-- SCIENTIFIC ROW 1 (Parentheses, Power, Root) -->
+            <button class="button function" data-action="parenthesis">(</button>
+            <button class="button function" data-action="parenthesis">)</button>
+            <button class="button function" data-action="power">xʸ</button>
+            <button class="button operator" data-operator="√">√</button>
+
+            <!-- SCIENTIFIC ROW 2 (Trigonometry and Clear) -->
+            <button class="button function" data-action="function">sin</button>
+            <button class="button function" data-action="function">cos</button>
+            <button class="button function" data-action="function">tan</button>
+            <button class="button operator" data-action="clear">AC</button>
+            
+            <!-- NUMBER ROW 1 (7, 8, 9, Divide) -->
+            <button class="button" data-number>7</button>
+            <button class="button" data-number>8</button>
+            <button class="button" data-number>9</button>
+            <button class="button operator" data-operator="/">÷</button>
+
+            <!-- NUMBER ROW 2 (4, 5, 6, Multiply) -->
+            <button class="button" data-number>4</button>
+            <button class="button" data-number>5</button>
+            <button class="button" data-number>6</button>
+            <button class="button operator" data-operator="*">×</button>
+
+            <!-- NUMBER ROW 3 (1, 2, 3, Subtract) -->
+            <button class="button" data-number>1</button>
+            <button class="button" data-number>2</button>
+            <button class="button" data-number>3</button>
+            <button class="button operator" data-operator="-">-</button>
+
+            <!-- NUMBER ROW 4 (0, Decimal, Equals, Add) -->
+            <button class="button zero" data-number>0</button>
+            <button class="button" data-number>.</button>
+            <button class="button operator" data-operator="+">+</button>
+            <button class="button equals" data-action="calculate">=</button>
+            
+        </div>
+    </div>
+    
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
